@@ -1,14 +1,14 @@
 /**
  * Returns connection status
- * @returns {Promise<boolean>}
+ * @returns {Promise<string>}
  */
-const isConnected = async () => {
+const getConnectionStatus = async () => {
     try {
         // Test database connection
-        return true;
+        return 'on';
     // eslint-disable-next-line no-unreachable
     } catch (e) {
-        return false;
+        return 'off';
     }
 };
 
@@ -22,5 +22,5 @@ const initialize = async () => {
 };
 
 module.exports = {
-    initialize, isConnected,
+    initialize, getConnectionStatus,
 };
