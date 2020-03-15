@@ -16,7 +16,10 @@ const isConnected = async () => {
  * Initialize Database connection
  * @returns {Promise<*>}
  */
-const initialize = async () => {};
+const initialize = async () => {
+    // connection configuration
+    // event listeners
+};
 
 module.exports = {
     initialize, isConnected,
