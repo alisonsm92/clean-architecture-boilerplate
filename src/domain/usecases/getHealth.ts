@@ -1,4 +1,4 @@
-import { Database, ConnectionStatus } from 'infra/contracts/database';
+import ConnectionStatus from 'domain/models/ConnectionStatus';
 
 export type HealthInfo = {
   isHealthy: boolean,
@@ -7,6 +7,5 @@ export type HealthInfo = {
 };
 
 export default interface GetHealth {
-  database: Database,
   execute() :Promise<HealthInfo>
 }

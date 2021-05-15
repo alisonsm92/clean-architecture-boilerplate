@@ -1,13 +1,15 @@
-import { Database, ConnectionStatus } from 'infra/contracts/database';
+import Database, { ConnectionStatus } from 'app/contracts/database';
 
 export default class GenericDBImplementation implements Database {
-  connection: boolean;
+  private connection: boolean;
 
   constructor() {
     this.connection = false;
   }
 
-  // Returns connection status
+  /**
+   * Returns database connection status
+   */
   async getConnectionStatus() :Promise<ConnectionStatus> {
     try {
       // Test database connection
@@ -18,7 +20,9 @@ export default class GenericDBImplementation implements Database {
     }
   }
 
-  // Initialize Database connection
+  /**
+   * Initialize Database connection
+   */
   async initialize() :Promise<void> {
     this.connection = true;
     // connection configuration
