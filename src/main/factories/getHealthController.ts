@@ -1,9 +1,9 @@
 import GetAppHealth from 'app/usecases/getAppHealth';
-import GenericDBImplementation from 'infra/database/genericDBImplementation';
 import GetHealthController from 'presentation/controllers/getHealthController';
+import GenericDBManager from 'infra/database/genericDBManager';
 
 export default function makeGetHealthController() :GetHealthController {
-  const database = new GenericDBImplementation();
-  const getAppHealth = new GetAppHealth(database);
+  const genericDBManager = GenericDBManager.getInstance();
+  const getAppHealth = new GetAppHealth(genericDBManager);
   return new GetHealthController(getAppHealth);
 }
