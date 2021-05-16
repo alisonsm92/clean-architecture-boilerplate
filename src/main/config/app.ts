@@ -1,7 +1,6 @@
 import express from 'express';
 import logger from './logger';
 import setupGenericDatabase from './database';
-import setupExpress from './express';
 
 /**
  * Setup application and all required dependencies
@@ -9,7 +8,7 @@ import setupExpress from './express';
 const setupApp = async () :Promise<express.Application> => {
   await setupGenericDatabase();
   logger.info('Database connected');
-  return setupExpress();
+  return (await import('main/config/express')).default;
 };
 
 export default setupApp;
