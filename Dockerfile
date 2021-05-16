@@ -4,8 +4,9 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
+RUN npm i
+RUN npm run build
 
 EXPOSE 3000
 
-CMD ["node","index.js"]
+CMD ["npm","run","start"]
