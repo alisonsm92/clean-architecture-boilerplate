@@ -1,0 +1,30 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "12"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "alias": {
+            "app": "./src/app",
+            "infra": "./src/infra",
+            "domain": "./src/domain",
+            "presentation": "./src/presentation",
+            "main": "./src/main",
+            "environment": "./src/environment"
+          },
+          "cwd": "babelrc"
+        }
+      ]
+    ],
+    "ignore": ["**/*.spec.ts"]
+  }
