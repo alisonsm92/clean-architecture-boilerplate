@@ -6,4 +6,4 @@ const router = Router();
 
 router.get('/health', adapt(makeGetHealthController()));
 
-module.exports = router;
+export default router;
